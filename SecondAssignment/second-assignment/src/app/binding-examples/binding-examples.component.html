@@ -1,0 +1,7 @@
+<div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" [(ngModel)]="username">    
+    <p>Current User is: {{ username }}</p>
+
+    <button class="btn btn-primary" [disabled]="username === ''" (click)="onUsernameClear()">Reset User</button>
+</div>

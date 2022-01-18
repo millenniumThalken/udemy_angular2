@@ -1,3 +1,31 @@
 <!--the servers component was created using the CLI with 'ng generate component servers' -->
+<label>Server Name</label>
+<!--$event is a special argument that can be used when using event binding, it gives us access to the event data-->
+<!-- this is one way data binding -->
+<!-- <input type="text" class="form-control"(input)="onUpdateServerName($event)"> -->
+
+<!-- here is an even easier way to bind data on events and it is mixing event and property binding -->
+<!-- Since in the TS component we gave serverName a value, you will see it in this input box -->
+<!-- and if we change the input you will see the serverName property changing, 2-way binding!!! -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+
+
+<!-- <p>{{ serverName }}</p> -->
+<!--square brackets lets Angular know that you are binding a property from the TS component to this HTML element-->
+<!--this is saying if allowNewServer is not true then activate the disabled attribute-->
+<button class="btn btn-primary" 
+    [disabled]="!allowNewServer"
+    
+    (click)="onCreateServer()">Add Server</button>
+<!-- for event binding use the paraenthese  -->
+
+<!--this is showing string interpolation data binding with binding to the boolean property in our TS component-->
+<p>{{ allowNewServer }}</p>
+
+<!--here is an example of replacing string interpolation with property binding-->
+<!--the innerText attribute points to the value of the element-->
+<p [innerText]="allowNewServer"></p>
+
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>

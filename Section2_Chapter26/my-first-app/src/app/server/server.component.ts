@@ -8,6 +8,15 @@ import { Component } from '@angular/core';
     templateUrl: './server.component.html'
 })
 
-export class ServerComponent{
+export class ServerComponent {
+    //you can use the method below to add a type to your variable 
+    serverID: number = 10;
+    //Angular is smart enough to infere there this is type string, but it is always good to give your variables types
+    serverStatus = 'offline';
+
+    //here is an example of a method that we will use with String Interpolation
+    getServerStatus(){
+        return this.serverStatus;
+    }
 
 }
