@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <button type="button" (click)="toggleMessage()" class="btn btn-outline-primary">Display Details</button>
+        </div>
+        <div class="col-4">
+            <button type="button" (click)="clearMessage()" class="btn btn-outline-warning">Clear Details</button>
+        </div>
+    </div>
+    <div class="row">
+        <p *ngIf="showBinksIsBetter">Who is the best doggo? {{ myMessage }}</p>
+    </div>
+    <div class="row">
+        <app-binks-message *ngFor="let value of animalArray"></app-binks-message>
+    </div>
+</div>

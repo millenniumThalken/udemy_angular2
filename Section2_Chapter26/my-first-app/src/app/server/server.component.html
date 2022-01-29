@@ -2,4 +2,11 @@
  <!-- the first part is injecting a string straight into the data binding -->
  <!-- the second part is grabbing a property from the ts component -->
  <!-- the third part is using a method -->
- <p>{{ 'Server' }} with ID {{ serverID }} is {{ getServerStatus() }}</p>
+ <p 
+    [ngStyle]="{backgroundColor: getColor()}"
+    [ngClass]="{online: serverStatus === 'online'}">
+    {{ 'Server' }} with ID {{ serverID }} is {{ getServerStatus() }}
+</p>
+ <!-- binding to a property of the directive, ngStyle is the directive and we know that we are doing property binding because of square brackets -->
+ <!-- ngStyle allows for dynamic css styling, ngClass allows for applying classes dynamiclly 
+        apply the online css class only if serverStatus equals online-->

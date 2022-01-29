@@ -16,6 +16,8 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus:string = "No Server Was Created!";
   serverName:string='TestServer';
+  serverCreated = false;
+  servers = ['TestServer','TestServer2'];
 
   //the constructor is a method that is ran at the creation of this component
   constructor() {
@@ -35,6 +37,13 @@ export class ServersComponent implements OnInit {
     //value of serverCreationStatus changes to "Server Was Created" because this methoid is getting
     //called on the click event of the button
     this.serverCreationStatus = 'Server Was Created, Name is ' + this.serverName;
+
+    //this is showing an example of the *ngIf directive, by binding to serverCreated and changing it to true
+    //also in this example we are no longer using serverCreationStatus
+    this.serverCreated = true;
+
+    //pushing to the servers array
+    this.servers.push(this.serverName);
   }
 
   //the method requires one argument of any data type

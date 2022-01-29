@@ -9,25 +9,21 @@ export class BindingExamplesComponent implements OnInit {
   username:string = '';
   active_button = false;
 
-  constructor() {
-    this.isUserEmpty(this.username);
-   }
+  constructor() {}
 
   ngOnInit(): void {
   }
 
-  isUserEmpty(username:string) {
-    if(username == '') {
-      this.active_button = true;
-    }
-    else
-    {
-      this.active_button = false;
-    }
-  }
-
   onUsernameClear() {
     this.username = '';
+  }
+
+  disableButton() {
+    if(this.username === '') {
+      return true;
+    }else{
+      return false;
+    }
   }
 
 }

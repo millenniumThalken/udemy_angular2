@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="col-xl">
+    <h3>Hard Facts about Binks</h3>
+  </div>
+</div>
+<app-practice></app-practice>
+<hr>
+<!--Below is a quick and easy way to make something a toggle button using the *ngIf directive -->
+<!-- <button class="btn btn-primary" (click)="showSecret = !showSecret">Toggle Message</button> -->
+
+<button class="btn btn-primary" (click)="onToggleDetails()">Toggle Message</button>
+<p *ngIf="showSecret">Secret Password=tuna</p>
+<div class="container">
+  <div class="col-xl">
+    <!--here we are using ngStyle and ngClass statements that are triggered when condition is true, althoug it would be better just to use the ngClass for both in this example-->
+    <div *ngFor="let item of log" [ngStyle]="{backgroundColor: item >= 5 ? 'blue' : 'transparent' }" [ngClass]="{changeToWhite:item >=5}">
+      {{item}}
+    </div>
+  </div>
+
+
+  <div class="col-xl">
+    <button class="btn btn-warning" (click)="onToggleDetailIndex()">Toggle Time</button>
+    <!--grabbing the index from the stamp array with *ngFor loop-->
+    <div *ngFor="let item of stamp; let i = index" [ngClass]="{changeToWhite:i >=4}">
+      {{item}}
+    </div>
+  </div>
+</div>
