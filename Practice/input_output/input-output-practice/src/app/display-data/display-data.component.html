@@ -1,0 +1,25 @@
+<div class="list-group">
+    <div class="list-group-item active">
+        <h3 class="list-group-item-heading">{{ element.name }}</h3>
+        <p class="list-group-item-text">{{ element.name }} is a {{ element.animal }}</p>
+        <p class="list-group-item-text">{{ element.name}} is usually a {{ element.behavior }}</p>
+        <img *ngIf="element.animal === 'Dog'" src="https://scontent-msp1-1.xx.fbcdn.net/v/t39.30808-6/271532618_10227538699115356_826052785601406449_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=730e14&_nc_ohc=u1eF48rjJYgAX_48VsV&tn=IgjBJuKfn9VOxPQ8&_nc_ht=scontent-msp1-1.xx&oh=00_AT-ve7ym3n2jn8t4zimEtUf0ZdVnyUP6kC7LswsHUtm2-g&oe=62201FA1" alt="dog" class="img-responsive" style="max-height: 100px;">
+        <img *ngIf="element.animal === 'Cat'" src="https://scontent-msp1-1.xx.fbcdn.net/v/t1.6435-9/131893380_10224730665836279_7139618160805241841_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=igudnHkIvmAAX_5EieR&_nc_ht=scontent-msp1-1.xx&oh=00_AT-L1VEI80rYS6ph37VeXCuYFph7BH68yGzY1D6TPREF_w&oe=6242CCD1" alt="dog" class="img-responsive" style="max-height: 100px;">
+        <img *ngIf="element.animal === 'Bird'" src="https://www.thesprucepets.com/thmb/V_YLRlAIKfTutBEzmSYwyEJP7OU=/1975x1518/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-597187685-58ad8e7a3df78c345b864b4f.jpg" alt="dog" class="img-responsive" style="max-height: 100px;">
+        <img *ngIf="element.animal === 'Lizard'" src="https://scontent-msp1-1.xx.fbcdn.net/v/t39.30808-6/274207730_7305362859504453_3720325607409959330_n.jpg?stp=dst-jpg_p526x296&_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=XFlTGp0hv8YAX_pKnFj&_nc_ht=scontent-msp1-1.xx&oh=00_AT_WqFCPKLmToavRj6iiFzsraPqtbqEGwORZf6eqFIMUxw&oe=6220599A" alt="dog" class="img-responsive" style="max-height: 100px;">
+        <div class="thumbnail">
+          <img src=image_url alt="...">
+        </div>
+    </div>
+</div>
+<div class="row justify-content-right">
+    <div class="col-sm-12">
+      <div class="thumbnail">
+        <img src=image_url alt="...">
+      </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <label for="animal" class="animal">Animal Type</label>
+            <input type="text" name="animal" class="form-control" [(ngModel)]="newAnimal">
+        </div>
+        <div class="col-md-4">
+            <label for="pet-name" class="pet-name">Pet's Name</label>
+            <input type="text" name="pet-name" class="form-control" [(ngModel)]="newPetName">
+        </div>
+        <div class="col-md-4">
+            <label for="pet-behavior" class="pet-behavior">Pet's Behavior</label>
+            <input type="text" name="pet-behavior" class="form-control" [(ngModel)]="newPetBehavior">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button class="btn-primary" id="pet-button" (click)="addNewPet()">Add Pet</button>
+        </div>
+        <div class="col-md-6">
+            <button class="btn-warning" id="pet-button" (click)="onClear()">Clear</button>
+        </div>
+    </div>
+    <div class="row">
+        <!--This is an example of using a local refernece the hashtag value is the local reference which is then being passed to the Joke() method as an arguement-->
+        <div class="col-md-12">
+            <label for="local-reference" class="local-reference">Knock Knock</label>
+            <input type="text" name="local-reference" class="form-control" #joke>
+            <button class="btn-warning" id="local-reference" (click)="Joke(joke)">Click</button>
+            <p>{{ joke_line }}</p>
+        </div>
+    </div>
+    
+</div>

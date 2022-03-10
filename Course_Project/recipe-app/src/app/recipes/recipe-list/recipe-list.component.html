@@ -1,0 +1,17 @@
+<!--Here is a button that will allow the creation of a new recipe-->
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success">New Recipe</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <!--The column holding the list of recipes will span the whole column, but keep in mind that 
+    this component is inside the recipes component that has a 5 span-->
+    <div class="col-xs-12">
+        <app-recipe-item *ngFor="let recipeElement of recipes" [recipe]="recipeElement" (selectedRecipe)="getRecipeDetails(recipeElement)"></app-recipe-item>
+        <!--listening to the event being emitted from recipe-item with OutPut property 'selectedRecipe' then passing the recipeElement from the array to a method-->
+    </div>
+</div>
+<!--the recipes list is made up of recipe items-->
+

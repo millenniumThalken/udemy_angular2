@@ -1,0 +1,24 @@
+<div class="page-header">
+  <h1 class="title">Let's Talk About My Pets!</h1>
+</div>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <!--First thing we need to do is pass information from the user into the array that is being housed in the app.component file
+      since the final array that will be used to display the information lives in app.component but the methods to add to the array live in
+      the user-input component we need to use the Output decorator paired with an event emitter to output the data from the user-input component to the array in app.component -->
+      <app-user-input (add_to_array)="onPetAdded($event)" (timer_number)="getImgText($event)"></app-user-input>
+      <!--Above is the key to passing the data from the user-input component to the array in the app.component
+      you basically property bind the event emitting method to the method in app.component that pushes to the array
+      this works because we are using Output and Events as the method argument trigger the event emitter-->
+    </div>
+    <hr>
+    <div class="col-xs-12">
+      <app-display-data *ngFor="let pet of myPets" [petElement]="pet" [index_number]="transport_number"></app-display-data>
+    </div>
+  </div>
+  
+</div>
+
+<!--*ngFor="let pet in myPets" [petElement]="pet"-->

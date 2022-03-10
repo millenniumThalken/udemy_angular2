@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <!--here we are listening to the events that we setup in game-control
+          remember to use $event because that is what hold the data that has been emmited-->
+      <app-game-control (intervalFired)="onIntervalFired($event)" ></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <!--this is how we can grab the odd numbers as they are being admitted. number is the Input variable in the OddComponent-->
+      <app-odd *ngFor = "let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
+      <app-even *ngFor = "let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+    </div>
+  </div>
+</div>

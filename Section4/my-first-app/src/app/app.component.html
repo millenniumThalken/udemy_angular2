@@ -1,0 +1,23 @@
+<div class="container">
+  <!--using event binding to bind the app-cockpit component and app component, it's like a (click) binding-->
+  <!--these two methods using property bindind are listening to an event that will be emitted from cockpit component-->
+  <app-cockpit 
+    (serverCreated)="onServerAdded($event)"
+    (bpCreated)="onBlueprintAdded($event)"
+  ></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <!--by placing code inside of the component selector, you can then pipe that logic into the components html with ng-content-->
+      <app-server-element *ngFor="let serverElement of serverElements"
+      [srvElement]="serverElement">
+        <p>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+        </p>
+      </app-server-element>
+      <!--using property binding we can bind the JavaScript Object in the server-element component with
+      the serverElements array in the app component, now the HTML in the server-element component can use the data in the serverElements -->
+    </div>
+  </div>
+</div>

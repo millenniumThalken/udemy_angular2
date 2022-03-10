@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{ element.name }}</div>
+    <div class="panel-body">
+        <!-- #region 
+        here is an example of using ng-content to hook in some complicated Angular coding into this template
+        the server-element component is being referenced in the app.component. that is where the logic is but it is being hooked into here  -->
+        <ng-content></ng-content>
+    </div>
+</div>

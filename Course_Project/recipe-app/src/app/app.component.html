@@ -1,0 +1,10 @@
+<app-header (navigate)="navigateToComponent($event)"></app-header>
+<!--the entire application is in a container with a single row and a single column that spans the entire window-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="toComponent == 'recipes'"></app-recipes>
+      <app-shopping-list *ngIf="toComponent == 'shopping'"></app-shopping-list>
+    </div>
+  </div>
+</div>

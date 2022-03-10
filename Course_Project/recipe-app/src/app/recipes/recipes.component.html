@@ -1,0 +1,16 @@
+<!--The List of recipes and then the details of the recipes should be side by side-->
+<!--Using bootstrap define a row with two columns in it-->
+<div class="row">
+    <div class="col-md-5">
+        <!--listening to the recipeDetails event and passing along the event data to a method-->
+        <app-recipe-list (recipeDetails)="passRecipeDetails($event)"></app-recipe-list>
+    </div>
+    <div class="col-md-7">
+        <!--checking to see if a recipe was selected with the ngIf, if not then us the ng-template, accessing template with local reference
+            using an Input decorator in recipe-details to pass along the data to the component-->
+        <app-recipe-detail *ngIf="passedAlongDetails; else infoText" [passedRecipeDetails]="passedAlongDetails"></app-recipe-detail>
+        <ng-template #infoText>
+            <p>Please select Recipe!</p>
+        </ng-template>
+    </div>  
+</div>
